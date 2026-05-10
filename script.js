@@ -34,7 +34,10 @@ function loadPrompts() {
     return [];
   }
 }
-
+/*
+  The prompts are stored in the browser’s localStorage, under this key: promptRepository.prompts
+  That means they are saved locally in the browser on your machine, not in a database or file. 
+*/
 function savePrompts(prompts) {
   localStorage.setItem(storageKey, JSON.stringify(prompts));
 }
