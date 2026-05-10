@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Repository</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="homeView" class="view">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Prompt Repository</p>
+          <h1>Find saved prompts by category</h1>
+        </div>
+        <button id="addPromptBtn" class="primary-action" type="button">Add Prompt</button>
+      </header>
+
+      <form id="filterForm" class="control-row">
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter" name="category">
+          <option value="">Select category</option>
+        </select>
+        <button type="submit">Show</button>
+      </form>
+
+      <section class="results-section" aria-live="polite">
+        <div class="results-heading">
+          <h2 id="resultsTitle">Prompts</h2>
+          <span id="promptCount">0 saved</span>
+        </div>
+        <div id="promptList" class="prompt-list empty-state">
+          Select a category and click Show to view saved prompts.
+        </div>
+      </section>
+    </section>
+
+    <section id="addView" class="view hidden">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">New Prompt</p>
+          <h1>Add a prompt to the repository</h1>
+        </div>
+      </header>
+
+      <form id="addPromptForm" class="prompt-form">
+        <label for="categoryInput">Category</label>
+        <select id="categoryInput" name="category" required>
+          <option value="">Select category</option>
+        </select>
+
+        <label for="promptText">Prompt</label>
+        <textarea id="promptText" name="prompt" rows="8" placeholder="Enter your prompt here..." required></textarea>
+
+        <div class="form-actions">
+          <button id="cancelBtn" class="secondary-action" type="button">Cancel</button>
+          <button class="primary-action" type="submit">Save</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
